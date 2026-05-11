@@ -1,6 +1,4 @@
-1. Change supabaseUrl and supabaseKey in .env file
-2. paste sql in databse from database.sql file
-# Now functionality:
+#  functionality:
 1. Post - it requires title as important and status from (progress, in-progress, completed), description and priority from (low, medium, high) as optional
 2. Get- get all task on /tasks
    1. get task by id on /tasks/:id
