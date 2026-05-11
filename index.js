@@ -72,13 +72,8 @@ app.post(
 app.get(
     "/tasks",
     async (req,res) => {
-        const {status,priority,sort,order,page,limit} = req.query;
+        const {status,priority,sort,order,} = req.query;
 
-        const finalPage= parseInt(page) || 1;
-        const finalLimit= parseInt(limit) || 10;
-
-        const startRange=(page-1)*limit;
-        const endRange=startRange+limit-1;
 
         let query= supabase.from("tasks").select("*");
 
@@ -93,7 +88,7 @@ app.get(
             query = query.order(sort,{ascending: order === "asc" });
         };
 
-        const {data,error} = await query.range(startRange,endRange);
+        const {data,error} = await query;
 
         if(error){
             return res.status(400).json({
