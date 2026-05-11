@@ -1,6 +1,7 @@
 1. Change supabaseUrl and supabaseKey in .env file
 2. paste sql in databse from database.sql file
-3. now functionality:
+3. run npm init -y and install packages @supabase/supabase-js, dotenv, express
+Now functionality:
    Post - it requires title as important and status from (progress, in-progress, completed), description and priority from (low, medium, high) as optional
    Get- get all task on /tasks
         get task by id on /tasks/:id
